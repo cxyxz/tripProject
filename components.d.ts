@@ -10,7 +10,13 @@ declare module '@vue/runtime-core' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TabBar: typeof import('./src/components/tab-bar/tab-bar.vue')['default']
+    VanCell: typeof import('vant/es')['Cell']
+    VanIndexAnchor: typeof import('vant/es')['IndexAnchor']
+    VanIndexBar: typeof import('vant/es')['IndexBar']
+    VanSearch: typeof import('vant/es')['Search']
     VanSwipe: typeof import('vant/es')['Swipe']
     VanSwipeItem: typeof import('vant/es')['SwipeItem']
+    VanTab: typeof import('vant/es')['Tab']
+    VanTabs: typeof import('vant/es')['Tabs']
   }
 }
