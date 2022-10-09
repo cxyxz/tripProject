@@ -20,17 +20,22 @@
 import { getAssetURL } from "../../utils/load_assets.js"
 import tabbarData from "../../assets/data/tabbar.js"
 
-import { computed, ref } from "vue";
-import { useRouter } from "vue-router";
+import { computed, ref, watch } from "vue";
+import { useRouter, useRoute } from "vue-router";
 
 const currentIndex = ref(0)
 const router = useRouter()
+const route = useRoute()
 const itemClick = (index,item) => {
   currentIndex.value = index
   router.push(item.path)
   
 }
-
+watch(route, (newRoute) => {
+  const index = tabbarData.findIndex(item => item.path === newRoute.path)
+  if(index === -1) return
+  currentIndex.value = index
+})
 
 </script>
 
@@ -43,7 +48,7 @@ const itemClick = (index,item) => {
   right: 0;
   height: 50px;
   display: flex;
-
+  background-color: #fffcfc;
   border-top: 1px solid #f3f3f3;
 
   .tab-bar-item {

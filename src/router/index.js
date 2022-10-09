@@ -29,6 +29,17 @@ const routes = [
     // meta: {
     //   hideTabBar: true
     // }
+  },
+  {
+    path: "/search",
+    component: () => import("@/views/search/search.vue"),
+    meta: {
+      hideTabBar: true
+    }
+  },
+  {
+    path: "/detail/:id",
+    component: () => import("@/views/detail/detail.vue")
   }
 ]
 
